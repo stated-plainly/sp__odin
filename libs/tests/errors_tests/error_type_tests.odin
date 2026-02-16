@@ -6,7 +6,7 @@ import "../../errors"
 
 @(test)
 ErrorType_display_name_InstantiationError :: proc(t: ^testing.T) {
-	instantiation_error := error.ErrorType.InstantiationError;
+	instantiation_error := errors.ErrorType.InstantiationError
 
-	testing.expect(t, error.ErrorType_display_name(instantiation_error)^ == "Instantiation", "ErrorType.InstantiationError's display_name failed to equal \"Instantiation\"")
+	testing.expect(t, errors.ErrorType_display_name(instantiation_error)^ == "Instantiation", "ErrorType.InstantiationError's display_name failed to equal \"Instantiation\"")
 }
