@@ -1,4 +1,4 @@
-package error
+package errors
 
 ErrorType :: enum {
 	InstantiationError
@@ -11,5 +11,5 @@ ErrorType_DISPLAY_NAME := []string{
 }
 
 ErrorType_display_name :: proc(error_type: ErrorType) -> ^string {
-	return &ErrorType_DISPLAY_NAME[cast(int)error_type];
+	return &ErrorType_DISPLAY_NAME[cast(int)error_type]
 }
