@@ -26,7 +26,7 @@ ScaleDegree :: enum {
 }
 
 @(rodata)
-@(private)
+@(private="file")
 ScaleDegree_DISPLAY_NAMES := []string{
 	"1",
 	"2♭",
@@ -53,7 +53,7 @@ ScaleDegree_DISPLAY_NAMES := []string{
 }
 
 @(rodata)
-@(private)
+@(private="file")
 ScaleDegree_KEYBOARD_FRIENDLY_NAMES := []string{
 	"1",
 	"2b",

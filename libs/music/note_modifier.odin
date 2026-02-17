@@ -10,7 +10,7 @@ NoteModifier :: enum {
 }
 
 @(rodata)
-@(private)
+@(private="file")
 NoteModifier_DISPLAY_NAMES := []string{
 	"𝄫",
 	"♭",
@@ -21,7 +21,7 @@ NoteModifier_DISPLAY_NAMES := []string{
 }
 
 @(rodata)
-@(private)
+@(private="file")
 NoteModifier_KEYBOARD_FRIENDLY_NAMES := []string{
 	"bb",
 	"b",

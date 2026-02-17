@@ -11,7 +11,7 @@ NoteLetter :: enum {
 }
 
 @(rodata)
-@(private)
+@(private="file")
 NoteLetter_DISPLAY_NAMES := []string{
 	"C",
 	"D",
@@ -23,7 +23,7 @@ NoteLetter_DISPLAY_NAMES := []string{
 }
 
 @(rodata)
-@(private)
+@(private="file")
 NoteLetter_KEYBOARD_FRIENDLY_NAMES := []string{
 	"c",
 	"d",

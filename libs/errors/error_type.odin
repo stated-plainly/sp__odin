@@ -5,7 +5,7 @@ ErrorType :: enum {
 }
 
 @(rodata)
-@(private)
+@(private="file")
 ErrorType_DISPLAY_NAME := []string{
 	"Instantiation",
 }
