@@ -12,6 +12,7 @@ part_2 :: proc(file_content: ^string) {
 	password := 0
 
 	file_content := strings.clone(file_content^)
+	defer delete(file_content)
 
 	for line in strings.split_lines_iterator(&file_content) {
 		direction_string := line[0:1]

@@ -9,6 +9,7 @@ part_1 :: proc(file_content: ^string) {
 	ok: bool
 
 	file_content := strings.clone(file_content^)
+	defer delete(file_content)
 
 	for id_range in strings.split(file_content, ",") {
 		id_range := strings.split(id_range, "-")
