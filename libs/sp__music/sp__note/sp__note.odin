@@ -2,9 +2,9 @@ package sp__note
 
 import "core:strings"
 
-import "sp__music:sp__scale_degree"
 import "sp__music:sp__letter"
 import "sp__music:sp__modifier"
+import "sp__music:sp__scale_degree"
 
 Note :: struct {
 	letter: sp__letter.Letter,
