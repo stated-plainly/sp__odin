@@ -1,4 +1,4 @@
-package modifier
+package sp__modifier
 
 Modifier :: enum {
 	Flat,

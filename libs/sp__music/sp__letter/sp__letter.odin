@@ -1,4 +1,4 @@
-package letter
+package sp__letter
 
 Letter :: enum {
 	C,

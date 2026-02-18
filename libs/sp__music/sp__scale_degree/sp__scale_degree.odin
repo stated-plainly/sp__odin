@@ -1,4 +1,4 @@
-package scale_degree
+package sp__scale_degree
 
 ScaleDegree :: enum {
 	One,
