@@ -1,4 +1,4 @@
-package music
+package scale_degree
 
 ScaleDegree :: enum {
 	One,
@@ -25,9 +25,17 @@ ScaleDegree :: enum {
 	Thirteen,
 }
 
+display_name :: proc(letter: ScaleDegree) -> ^string {
+	return &DISPLAY_NAMES[int(letter)]
+}
+
+keyboard_friendly_name := proc(letter: ScaleDegree) -> ^string {
+	return &KEYBOARD_FRIENDLY_NAMES[int(letter)]
+}
+
 @(rodata)
 @(private="file")
-ScaleDegree_DISPLAY_NAMES := []string{
+DISPLAY_NAMES := []string{
 	"1",
 	"2♭",
 	"2",
@@ -54,7 +62,7 @@ ScaleDegree_DISPLAY_NAMES := []string{
 
 @(rodata)
 @(private="file")
-ScaleDegree_KEYBOARD_FRIENDLY_NAMES := []string{
+KEYBOARD_FRIENDLY_NAMES := []string{
 	"1",
 	"2b",
 	"2",
@@ -77,12 +85,4 @@ ScaleDegree_KEYBOARD_FRIENDLY_NAMES := []string{
 	"11s",
 	"13b",
 	"13",
-}
-
-ScaleDegree_display_name :: proc(letter: ScaleDegree) -> ^string {
-	return &ScaleDegree_DISPLAY_NAMES[cast(int)letter]
-}
-
-ScaleDegree_keyboard_friendly_name := proc(letter: ScaleDegree) -> ^string {
-	return &ScaleDegree_KEYBOARD_FRIENDLY_NAMES[cast(int)letter]
 }
