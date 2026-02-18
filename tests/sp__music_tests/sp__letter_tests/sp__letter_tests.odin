@@ -1,4 +1,4 @@
-package sp__music_tests
+package sp__letter_tests
 
 import "core:testing"
 
