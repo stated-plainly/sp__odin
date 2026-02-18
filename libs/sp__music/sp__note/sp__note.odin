@@ -74,13 +74,9 @@ display_name :: proc(note: ^Note, allocator := context.allocator) -> string {
 	strings.write_string(&b, sp__letter.display_name(note^.letter)^)
 
 	if note^.alteration < 0 {
-		for _ in note^.alteration..=-1 {
-			strings.write_string(&b, sp__modifier.display_name(sp__modifier.Modifier.Flat)^)
-		}
+		for _ in note^.alteration..=-1 do strings.write_string(&b, sp__modifier.display_name(sp__modifier.Modifier.Flat)^)
 	} else if note^.alteration > 0 {
-		for _ in 1..=note^.alteration {
-			strings.write_string(&b, sp__modifier.display_name(sp__modifier.Modifier.Sharp)^)
-		}
+		for _ in 1..=note^.alteration do strings.write_string(&b, sp__modifier.display_name(sp__modifier.Modifier.Sharp)^)
 	}
 
 	display_name := strings.clone(strings.to_string(b), allocator)
@@ -94,13 +90,9 @@ keyboard_friendly_name :: proc(note: ^Note, allocator := context.allocator) -> s
 	strings.write_string(&b, sp__letter.keyboard_friendly_name(note^.letter)^)
 
 	if note^.alteration < 0 {
-		for _ in note^.alteration..=-1 {
-			strings.write_string(&b, sp__modifier.keyboard_friendly_name(sp__modifier.Modifier.Flat)^)
-		}
+		for _ in note^.alteration..=-1 do strings.write_string(&b, sp__modifier.keyboard_friendly_name(sp__modifier.Modifier.Flat)^)
 	} else if note^.alteration > 0 {
-		for _ in 1..=note^.alteration {
-			strings.write_string(&b, sp__modifier.keyboard_friendly_name(sp__modifier.Modifier.Sharp)^)
-		}
+		for _ in 1..=note^.alteration do strings.write_string(&b, sp__modifier.keyboard_friendly_name(sp__modifier.Modifier.Sharp)^)
 	}
 
 	keyboard_friendly_name := strings.clone(strings.to_string(b), allocator)
