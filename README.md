@@ -1,5 +1,5 @@
 # [Stated Plainly](https://substack.com/@statedplainly/posts) :: [Odin](https://odin-lang.org/)
-Stated plainly, this is a dumping ground for everything I write in [Odin](https://odin-lang.org/).
+**Stated plainly**, this is a dumping ground for everything I write in [Odin](https://odin-lang.org/).
 
 ## Sections
 - [apps](https://github.com/stated-plainly/sp__odin/tree/main/apps) - Applications that can be run via `odin run .`
