@@ -3,15 +3,15 @@ package sp__music_tests
 import "core:fmt"
 import "core:testing"
 
-import "../../libs/sp__music"
-import "../../libs/sp__numbers"
+import "../../libs/music"
+import "../../libs/numbers"
 
 // START - Display Name Tests
 @(test)
 test__Note__display_name__B :: proc(t: ^testing.T) {
-	note := sp__music.Note__new(.B)
+	note := music.Note__new(.B)
 
-	display_name := sp__music.Note__display_name(note)
+	display_name := music.Note__display_name(note)
 	defer delete(display_name)
 
 	testing.expect(t, display_name == "B")
@@ -19,9 +19,9 @@ test__Note__display_name__B :: proc(t: ^testing.T) {
 
 @(test)
 test__Note__display_name__Cbb :: proc(t: ^testing.T) {
-	note := sp__music.Note__new(.C, -2)
+	note := music.Note__new(.C, -2)
 
-	display_name := sp__music.Note__display_name(note)
+	display_name := music.Note__display_name(note)
 	defer delete(display_name)
 
 	testing.expect(t, display_name == "C♭♭")
@@ -29,9 +29,9 @@ test__Note__display_name__Cbb :: proc(t: ^testing.T) {
 
 @(test)
 test__Note__display_name__Gsss :: proc(t: ^testing.T) {
-	note := sp__music.Note__new(.G, 3)
+	note := music.Note__new(.G, 3)
 
-	display_name := sp__music.Note__display_name(note)
+	display_name := music.Note__display_name(note)
 	defer delete(display_name)
 
 	testing.expect(t, display_name == "G♯♯♯")
@@ -40,9 +40,9 @@ test__Note__display_name__Gsss :: proc(t: ^testing.T) {
 // START - Keyboard Friendly Name Tests
 @(test)
 test__Note__keyboard_friendly_name__F :: proc(t: ^testing.T) {
-	note := sp__music.Note__new(.F)
+	note := music.Note__new(.F)
 
-	keyboard_friendly_name := sp__music.Note__keyboard_friendly_name(note)
+	keyboard_friendly_name := music.Note__keyboard_friendly_name(note)
 	defer delete(keyboard_friendly_name)
 
 	testing.expect(t, keyboard_friendly_name == "f")
@@ -50,9 +50,9 @@ test__Note__keyboard_friendly_name__F :: proc(t: ^testing.T) {
 
 @(test)
 test__Note__keyboard_friendly_name__Ebbb :: proc(t: ^testing.T) {
-	note := sp__music.Note__new(.E, -3)
+	note := music.Note__new(.E, -3)
 
-	keyboard_friendly_name := sp__music.Note__keyboard_friendly_name(note)
+	keyboard_friendly_name := music.Note__keyboard_friendly_name(note)
 	defer delete(keyboard_friendly_name)
 
 	testing.expect(t, keyboard_friendly_name == "ebbb")
@@ -60,9 +60,9 @@ test__Note__keyboard_friendly_name__Ebbb :: proc(t: ^testing.T) {
 
 @(test)
 test__Note__keyboard_friendly_name__Bss :: proc(t: ^testing.T) {
-	note := sp__music.Note__new(.B, 2)
+	note := music.Note__new(.B, 2)
 
-	keyboard_friendly_name := sp__music.Note__keyboard_friendly_name(note)
+	keyboard_friendly_name := music.Note__keyboard_friendly_name(note)
 	defer delete(keyboard_friendly_name)
 
 	testing.expect(t, keyboard_friendly_name == "bss")
@@ -72,7 +72,7 @@ test__Note__keyboard_friendly_name__Bss :: proc(t: ^testing.T) {
 // start - Note__new
 @(test)
 test__Note__new__A :: proc(t: ^testing.T) {
-	note := sp__music.Note__new(.A)
+	note := music.Note__new(.A)
 
 	testing.expect(t, note.letter == .A)
 	testing.expect(t, note.alteration == 0)
@@ -80,7 +80,7 @@ test__Note__new__A :: proc(t: ^testing.T) {
 
 @(test)
 test__Note__new__Gbbbb :: proc(t: ^testing.T) {
-	note := sp__music.Note__new(.G, -4)
+	note := music.Note__new(.G, -4)
 
 	testing.expect(t, note.letter == .G)
 	testing.expect(t, note.alteration == -4)
@@ -88,7 +88,7 @@ test__Note__new__Gbbbb :: proc(t: ^testing.T) {
 
 @(test)
 test__Note__new__Fsssss :: proc(t: ^testing.T) {
-	note := sp__music.Note__new(.F, 5)
+	note := music.Note__new(.F, 5)
 
 	testing.expect(t, note.letter == .F)
 	testing.expect(t, note.alteration == 5)
@@ -98,25 +98,25 @@ test__Note__new__Fsssss :: proc(t: ^testing.T) {
 @(test)
 test__Note__random_diatonic_root :: proc(t: ^testing.T) {
 	for i in 0..=100 {
-		random_diatonic_root := sp__music.Note__random_diatonic_root()
+		random_diatonic_root := music.Note__random_diatonic_root()
 
-		testing.expect(t,  sp__numbers.value_in_range(random_diatonic_root.alteration, -1, 1))
+		testing.expect(t,  numbers.value_in_range(random_diatonic_root.alteration, -1, 1))
 	}
 }
 // end - Note__random_diatonic_root
 // start - Note__from_root
 @(test)
 test__Note__from_root__CIonian :: proc(t: ^testing.T) {
-	root := sp__music.Note__new(.C)
+	root := music.Note__new(.C)
 
-	notes := [7]sp__music.Note {
-		sp__music.Note__from_root(root, .One),
-		sp__music.Note__from_root(root, .Two),
-		sp__music.Note__from_root(root, .Three),
-		sp__music.Note__from_root(root, .Four),
-		sp__music.Note__from_root(root, .Five),
-		sp__music.Note__from_root(root, .Six),
-		sp__music.Note__from_root(root, .Seven),
+	notes := [7]music.Note {
+		music.Note__from_root(root, .One),
+		music.Note__from_root(root, .Two),
+		music.Note__from_root(root, .Three),
+		music.Note__from_root(root, .Four),
+		music.Note__from_root(root, .Five),
+		music.Note__from_root(root, .Six),
+		music.Note__from_root(root, .Seven),
 	}
 
 	// C
@@ -144,16 +144,16 @@ test__Note__from_root__CIonian :: proc(t: ^testing.T) {
 
 @(test)
 test__Note__from_root__DIonian :: proc(t: ^testing.T) {
-	root := sp__music.Note__new(.D)
+	root := music.Note__new(.D)
 
-	notes := [7]sp__music.Note {
-		sp__music.Note__from_root(root, .One),
-		sp__music.Note__from_root(root, .Two),
-		sp__music.Note__from_root(root, .Three),
-		sp__music.Note__from_root(root, .Four),
-		sp__music.Note__from_root(root, .Five),
-		sp__music.Note__from_root(root, .Six),
-		sp__music.Note__from_root(root, .Seven),
+	notes := [7]music.Note {
+		music.Note__from_root(root, .One),
+		music.Note__from_root(root, .Two),
+		music.Note__from_root(root, .Three),
+		music.Note__from_root(root, .Four),
+		music.Note__from_root(root, .Five),
+		music.Note__from_root(root, .Six),
+		music.Note__from_root(root, .Seven),
 	}
 
 	// D
@@ -181,16 +181,16 @@ test__Note__from_root__DIonian :: proc(t: ^testing.T) {
 
 @(test)
 test__Note__from_root__EIonian :: proc(t: ^testing.T) {
-	root := sp__music.Note__new(.E)
+	root := music.Note__new(.E)
 
-	notes := [7]sp__music.Note {
-		sp__music.Note__from_root(root, .One),
-		sp__music.Note__from_root(root, .Two),
-		sp__music.Note__from_root(root, .Three),
-		sp__music.Note__from_root(root, .Four),
-		sp__music.Note__from_root(root, .Five),
-		sp__music.Note__from_root(root, .Six),
-		sp__music.Note__from_root(root, .Seven),
+	notes := [7]music.Note {
+		music.Note__from_root(root, .One),
+		music.Note__from_root(root, .Two),
+		music.Note__from_root(root, .Three),
+		music.Note__from_root(root, .Four),
+		music.Note__from_root(root, .Five),
+		music.Note__from_root(root, .Six),
+		music.Note__from_root(root, .Seven),
 	}
 
 	// E
@@ -218,16 +218,16 @@ test__Note__from_root__EIonian :: proc(t: ^testing.T) {
 
 @(test)
 test__Note__from_root__FIonian :: proc(t: ^testing.T) {
-	root := sp__music.Note__new(.F)
+	root := music.Note__new(.F)
 
-	notes := [7]sp__music.Note {
-		sp__music.Note__from_root(root, .One),
-		sp__music.Note__from_root(root, .Two),
-		sp__music.Note__from_root(root, .Three),
-		sp__music.Note__from_root(root, .Four),
-		sp__music.Note__from_root(root, .Five),
-		sp__music.Note__from_root(root, .Six),
-		sp__music.Note__from_root(root, .Seven),
+	notes := [7]music.Note {
+		music.Note__from_root(root, .One),
+		music.Note__from_root(root, .Two),
+		music.Note__from_root(root, .Three),
+		music.Note__from_root(root, .Four),
+		music.Note__from_root(root, .Five),
+		music.Note__from_root(root, .Six),
+		music.Note__from_root(root, .Seven),
 	}
 
 	// F
@@ -255,16 +255,16 @@ test__Note__from_root__FIonian :: proc(t: ^testing.T) {
 
 @(test)
 test__Note__from_root__GIonian :: proc(t: ^testing.T) {
-	root := sp__music.Note__new(.G)
+	root := music.Note__new(.G)
 
-	notes := [7]sp__music.Note {
-		sp__music.Note__from_root(root, .One),
-		sp__music.Note__from_root(root, .Two),
-		sp__music.Note__from_root(root, .Three),
-		sp__music.Note__from_root(root, .Four),
-		sp__music.Note__from_root(root, .Five),
-		sp__music.Note__from_root(root, .Six),
-		sp__music.Note__from_root(root, .Seven),
+	notes := [7]music.Note {
+		music.Note__from_root(root, .One),
+		music.Note__from_root(root, .Two),
+		music.Note__from_root(root, .Three),
+		music.Note__from_root(root, .Four),
+		music.Note__from_root(root, .Five),
+		music.Note__from_root(root, .Six),
+		music.Note__from_root(root, .Seven),
 	}
 
 	// G
@@ -292,16 +292,16 @@ test__Note__from_root__GIonian :: proc(t: ^testing.T) {
 
 @(test)
 test__Note__from_root__AIonian :: proc(t: ^testing.T) {
-	root := sp__music.Note__new(.A)
+	root := music.Note__new(.A)
 
-	notes := [7]sp__music.Note {
-		sp__music.Note__from_root(root, .One),
-		sp__music.Note__from_root(root, .Two),
-		sp__music.Note__from_root(root, .Three),
-		sp__music.Note__from_root(root, .Four),
-		sp__music.Note__from_root(root, .Five),
-		sp__music.Note__from_root(root, .Six),
-		sp__music.Note__from_root(root, .Seven),
+	notes := [7]music.Note {
+		music.Note__from_root(root, .One),
+		music.Note__from_root(root, .Two),
+		music.Note__from_root(root, .Three),
+		music.Note__from_root(root, .Four),
+		music.Note__from_root(root, .Five),
+		music.Note__from_root(root, .Six),
+		music.Note__from_root(root, .Seven),
 	}
 
 	// A
@@ -329,16 +329,16 @@ test__Note__from_root__AIonian :: proc(t: ^testing.T) {
 
 @(test)
 test__Note__from_root__BIonian :: proc(t: ^testing.T) {
-	root := sp__music.Note__new(.B)
+	root := music.Note__new(.B)
 
-	notes := [7]sp__music.Note {
-		sp__music.Note__from_root(root, .One),
-		sp__music.Note__from_root(root, .Two),
-		sp__music.Note__from_root(root, .Three),
-		sp__music.Note__from_root(root, .Four),
-		sp__music.Note__from_root(root, .Five),
-		sp__music.Note__from_root(root, .Six),
-		sp__music.Note__from_root(root, .Seven),
+	notes := [7]music.Note {
+		music.Note__from_root(root, .One),
+		music.Note__from_root(root, .Two),
+		music.Note__from_root(root, .Three),
+		music.Note__from_root(root, .Four),
+		music.Note__from_root(root, .Five),
+		music.Note__from_root(root, .Six),
+		music.Note__from_root(root, .Seven),
 	}
 
 	// B
