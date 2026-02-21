@@ -1,5 +1,6 @@
 package sp__music
 
+import "core:math/rand"
 import "core:strings"
 
 Note :: struct {
@@ -9,6 +10,13 @@ Note :: struct {
 
 Note__new :: proc(letter: Letter, alteration := 0) -> Note {
 	return Note { letter, alteration }
+}
+
+Note__random_diatonic_root :: proc() -> Note {
+	letter := cast(Letter)rand.int_max(7)
+	alteration := rand.int_range(-1, 2);
+
+	return Note__new(letter, alteration)
 }
 
 Note__from_root :: proc(root: Note, scale_degree: ScaleDegree) -> Note {
