@@ -130,3 +130,56 @@ ScaleDegree__keyboard_friendly_name :: proc(scale_degree: ScaleDegree) -> string
 
 	return keyboard_friendly_name
 }
+
+ScaleDegree__from_keyboard_friendly_name :: proc(keyboard_friendly_name: string) -> Maybe(ScaleDegree) {
+	output: Maybe(ScaleDegree)
+
+	switch keyboard_friendly_name {
+		case "1":
+			output = .One
+		case "2b":
+			output = .TwoFlat
+		case "2":
+			output = .Two
+		case "3b":
+			output = .ThreeFlat
+		case "3":
+			output = .Three
+		case "4":
+			output = .Four
+		case "4s":
+			output = .FourSharp
+		case "5b":
+			output = .FiveFlat
+		case "5":
+			output = .Five
+		case "5s":
+			output = .FiveSharp
+		case "6b":
+			output = .SixFlat
+		case "6":
+			output = .Six
+		case "7b":
+			output = .SevenFlat
+		case "7":
+			output = .Seven
+		case "8":
+			output = .Eight
+		case "9b":
+			output = .NineFlat
+		case "9":
+			output = .Nine
+		case "9s":
+			output = .NineSharp
+		case "11":
+			output = .Eleven
+		case "11s":
+			output = .ElevenSharp
+		case "13b":
+			output = .ThirteenFlat
+		case "13":
+			output = .Thirteen
+	}
+
+	return output
+}
