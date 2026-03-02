@@ -1,5 +1,7 @@
 package sp__music
 
+import "core:math/rand"
+
 ScaleDegree :: enum {
 	One,
 	TwoFlat,
@@ -23,6 +25,61 @@ ScaleDegree :: enum {
 	ElevenSharp,
 	ThirteenFlat,
 	Thirteen,
+}
+
+ScaleDegree__random :: proc() -> ScaleDegree {
+	output: ScaleDegree
+
+	random_int := rand.int_range(0, 22)
+
+	switch random_int {
+		case 0:
+			output = .One
+		case 1:
+			output = .TwoFlat
+		case 2:
+			output = .Two
+		case 3:
+			output = .ThreeFlat
+		case 4:
+			output = .Three
+		case 5:
+			output = .Four
+		case 6:
+			output = .FourSharp
+		case 7:
+			output = .FiveFlat
+		case 8:
+			output = .Five
+		case 9:
+			output = .FiveSharp
+		case 10:
+			output = .SixFlat
+		case 11:
+			output = .Six
+		case 12:
+			output = .SevenFlat
+		case 13:
+			output = .Seven
+		case 14:
+			output = .Eight
+		case 15:
+			output = .NineFlat
+		case 16:
+			output = .Nine
+		case 17:
+			output = .NineSharp
+		case 18:
+			output = .Eleven
+		case 19:
+			output = .ElevenSharp
+		case 20:
+			output = .ThirteenFlat
+		case 21:
+			output = .Thirteen
+	}
+
+	return output
 }
 
 ScaleDegree__display_name :: proc(scale_degree: ScaleDegree) -> string {
