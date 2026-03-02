@@ -18,7 +18,7 @@ Modifier__display_name :: proc(modifier: Modifier) -> string {
 	return display_name
 }
 
-Modifier__keyboard_friendly_name := proc(modifier: Modifier) -> string {
+Modifier__keyboard_friendly_name :: proc(modifier: Modifier) -> string {
 	keyboard_friendly_name: string
 
 	switch modifier {

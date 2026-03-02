@@ -33,7 +33,7 @@ Letter__display_name :: proc(letter: Letter) -> string {
 	return display_name
 }
 
-Letter__keyboard_friendly_name := proc(letter: Letter) -> string {
+Letter__keyboard_friendly_name :: proc(letter: Letter) -> string {
 	keyboard_friendly_name: string
 
 	switch letter {

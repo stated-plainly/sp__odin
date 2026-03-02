@@ -78,7 +78,7 @@ ScaleDegree__display_name :: proc(scale_degree: ScaleDegree) -> string {
 	return display_name
 }
 
-ScaleDegree__keyboard_friendly_name := proc(scale_degree: ScaleDegree) -> string {
+ScaleDegree__keyboard_friendly_name :: proc(scale_degree: ScaleDegree) -> string {
 	keyboard_friendly_name: string
 
 	switch scale_degree {
