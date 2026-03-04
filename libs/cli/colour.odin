@@ -15,17 +15,17 @@ BG_COLOUR_CODE :: 48
 COLOUR_RESET_CODE :: 39
 
 colour :: proc(value: string, colour: graphics.Colour, allocator := context.allocator, deallocate_value := false) -> string {
-	if deallocate_value {
-		defer delete(value, allocator = allocator)
-	}
+	output := fmt.aprintf(COLOUR_F_STRING, FG_COLOUR_CODE, colour.r, colour.g, colour.b, value, COLOUR_RESET_CODE, allocator = allocator)
 
-	return fmt.aprintf(COLOUR_F_STRING, FG_COLOUR_CODE, colour.r, colour.g, colour.b, value, COLOUR_RESET_CODE, allocator = allocator)
+	if deallocate_value do delete(value, allocator = allocator)
+
+	return output
 }
 
 bg_colour :: proc(value: string, colour: graphics.Colour, allocator := context.allocator, deallocate_value := false) -> string {
-	if deallocate_value {
-		defer delete(value, allocator = allocator)
-	}
+	output := fmt.aprintf(COLOUR_F_STRING, BG_COLOUR_CODE, colour.r, colour.g, colour.b, value, COLOUR_RESET_CODE, allocator = allocator)
+	
+	if deallocate_value do delete(value, allocator = allocator)
 
-	return fmt.aprintf(COLOUR_F_STRING, BG_COLOUR_CODE, colour.r, colour.g, colour.b, value, COLOUR_RESET_CODE, allocator = allocator)
+	return output
 }
