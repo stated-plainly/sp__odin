@@ -1,5 +1,7 @@
 package sp__cli
 
+import "core:fmt"
+
 import "../graphics"
 
 @(private="file")
