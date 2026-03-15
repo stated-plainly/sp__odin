@@ -1,0 +1,36 @@
+package procs
+
+import "core:fmt"
+
+print_help :: proc() {
+	fmt.println("------------------")
+	fmt.println(" c_compiler")
+	fmt.println("------------------")
+	fmt.println()
+	fmt.println(" interface:")
+	fmt.println()
+	fmt.println("     <path_to_c_file> [option]")
+	fmt.println()
+	fmt.println(" options:")
+	fmt.println()
+	fmt.println("     {blank}")
+	fmt.println()
+	fmt.println("        -  Runs the compiler as normal i.e. compiles your source code into an executable")
+	fmt.println()
+	fmt.println("    --lex")
+	fmt.println()
+	fmt.println("        -  Tests that the lexer \"would\" tokenise your source code")
+	fmt.println()
+	fmt.println("    --parse")
+	fmt.println()
+	fmt.println("        1. Tests that the lexer \"would\" tokenise your source code")
+	fmt.println("        2. Tests that the parser \"would\" build an AST from the token list output by the lexer")
+	fmt.println()
+	fmt.println("    --codegen")
+	fmt.println()
+	fmt.println("        1.  Tests that the lexer \"would\" tokenise your source code")
+	fmt.println("        2.  Tests that the parser \"would\" build an AST from the token list output by the lexer")
+	fmt.println("        3.  Tests that the code generator \"would\" generate assembly code from the AST output by the parser")
+	fmt.println()
+	fmt.println("------------------")
+}
