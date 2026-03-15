@@ -1,5 +1,5 @@
 // note that the same package name is used across this file, 'last_name.odin', and 'name_tag.odin', because they all belong to the same folder ('name_tag/')
-package sp__reference_packages_nametag
+package _language_reference__packages__nametag
 
 // here, we define a type alias for string called 'FirstName'
 FirstName :: string

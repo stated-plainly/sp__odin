@@ -1,4 +1,4 @@
-package sp__reference_variables
+package _language_reference__variables
 
 // there are three ways to instantiate variables in Odin
 
@@ -8,7 +8,5 @@ var_1: int = 55
 // 2: annotate type and implicitly assign 'zero' value (this is different per type but logically intuitive e.g. 0 for numbers, false for bool, "" for string, nil for union, and so on)
 var_2: string
 
-// 3: derive type from assigned value
+// 3: derive type from assigned value (this is the least attritive option, but makes it easier to miss an incorrect type assignment)
 var_3 := "Hello, World!"
-
-// option 3 should generally be preferred, particularly when assigning proc return values
