@@ -5,7 +5,7 @@ import os "core:os/os2"
 
 import "../enums/eBuildOption"
 
-build :: proc(path_to_c_file: string, build_option: eBuildOption.eBuildOption) {
+build :: proc(path_to_c_file: string, build_option: eBuildOption.Self) {
 	r, w, err := os.pipe()
 	defer os.close(r)
 	

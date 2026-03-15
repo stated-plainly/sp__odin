@@ -1,6 +1,6 @@
 package enums__build_option
 
-eBuildOption :: enum {
+Self :: enum {
 	Default,
 	Lex,
 	Parse,

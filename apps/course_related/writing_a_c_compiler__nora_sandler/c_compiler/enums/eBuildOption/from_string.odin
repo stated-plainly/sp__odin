@@ -1,6 +1,6 @@
 package enums__build_option
 
-from_string :: proc(value: string) -> (build_option: eBuildOption, succeeded: bool) {
+from_string :: proc(value: string) -> (build_option: Self, succeeded: bool) {
 	succeeded = true
 
 	switch value {
