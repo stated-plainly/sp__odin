@@ -1,4 +1,4 @@
-package _language_reference__generics__1_generic_procs
+package _language_reference__generics
 
 import "base:intrinsics"
 import "core:math/rand"
