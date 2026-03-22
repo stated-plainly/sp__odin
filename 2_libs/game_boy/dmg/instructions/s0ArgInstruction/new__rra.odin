@@ -1,7 +1,5 @@
 package sp__lib__game_boy__dmg__instructions__s0ArgInstruction
 
-import "../eInstructionType"
-
 new__rra :: proc() -> Self {
-	return { instruction = .rra }
+	return { type = .rra }
 }

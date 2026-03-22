@@ -3,5 +3,5 @@ package sp__lib__game_boy__dmg__instructions__s0ArgInstruction
 import "../eInstructionType"
 
 Self :: struct {
-	instruction: eInstructionType.Self,
+	type: eInstructionType.Self,
 }
