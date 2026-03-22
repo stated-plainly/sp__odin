@@ -1,4 +1,4 @@
-package sp__lib__game_boy__dmg__instructions__eOneByteOpcode
+package sp__lib__game_boy__dmg__opcodes__eOneByteOpcode
 
 Self :: enum byte {
 	// 00

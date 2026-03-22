@@ -1,4 +1,4 @@
-package sp__lib__game_boy__dmg__instructions__eTwoByteOpcode
+package sp__lib__game_boy__dmg__opcodes__eTwoByteOpcode
 
 // Note: The first byte is ubiquitously 0xCB, so our enum only needs to match the second
 
