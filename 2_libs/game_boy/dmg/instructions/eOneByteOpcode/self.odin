@@ -1,6 +1,6 @@
 package sp__lib__game_boy__dmg__instructions__eOneByteOpcode
 
-Self :: enum u8 {
+Self :: enum byte {
 	// 00
 	nop                = 0x00,
 	ld__bc__n16        = 0x01,

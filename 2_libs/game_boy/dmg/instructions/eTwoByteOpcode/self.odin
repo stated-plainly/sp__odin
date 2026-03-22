@@ -2,7 +2,7 @@ package sp__lib__game_boy__dmg__instructions__eTwoByteOpcode
 
 // Note: The first u8 is ubiquitously 0xCB, so our enum only needs to match the second
 
-Self :: enum u8 {
+Self :: enum byte {
 	// CB00
 	rlc__b            = 0x00,
 	rlc__c            = 0x01,
