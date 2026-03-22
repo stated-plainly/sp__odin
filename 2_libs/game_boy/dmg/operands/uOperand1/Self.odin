@@ -1,7 +1,7 @@
 package sp__lib__game_boy__dmg__instructions__uOperand1
 
 import "../../conditions/eCondition"
-import "../../memory/eMemoryAddress"
+import "../../memory/sMemoryAddress"
 import "../../registers/e8BitRegister"
 import "../../registers/e16BitRegister"
 import "../../values/aS8"
@@ -12,7 +12,7 @@ import "../../vectors/eRestartVector"
 Self :: union {
 	e8BitRegister.Self,
 	e16BitRegister.Self,
-	eMemoryAddress.Self,
+	sMemoryAddress.Self,
 	eCondition.Self,
 	eRestartVector.Self,
 	aS8.Self,

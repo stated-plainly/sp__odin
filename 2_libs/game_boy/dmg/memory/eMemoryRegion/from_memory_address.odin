@@ -1,9 +1,9 @@
 package sp__lib__game_boy__dmg__eMemoryRegion
 
-import "../aMemoryAddress"
+import "../../values/aA16"
 
-from_memory_address :: proc(memory_address: aMemoryAddress.Self) -> (memory_region: Self) {
-	switch memory_address {
+from_memory_address :: proc(address: aA16.Self) -> (memory_region: Self) {
+	switch address {
 	case 0x0000..=0x7FFF:
 		memory_region = .ROM
 	case 0x800..=0x9FFF:

@@ -1,7 +1,7 @@
 package sp__lib__game_boy__dmg__instructions__s1OperandInstruction
 
-import "../../memory/eMemoryAddress"
+import "../../memory/sMemoryAddress"
 
-new__or__addr :: proc(address: eMemoryAddress.Self) -> Self {
+new__or__addr :: proc(address: sMemoryAddress.Self) -> Self {
 	return { type = .or, operand = address }
 }

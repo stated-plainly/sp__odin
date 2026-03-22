@@ -1,5 +1,6 @@
 package sp__lib__game_boy__dmg__instructions__s1OperandInstruction
 
+import "../../memory/sMemoryAddress"
 import "../../opcodes/e1ByteOpcode"
 import "../../opcodes/e2ByteOpcode"
 import "../../opcodes/uOpcode"
@@ -9,7 +10,7 @@ import "../../values/aS8"
 import "../../values/uN8"
 import "../../values/uN16"
 
-maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.Self)) -> (maybe_self: Maybe(Self)) {
+maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.Self) = nil) -> (maybe_self: Maybe(Self)) {
 	switch opcode_variant in opcode {
 	case e1ByteOpcode.Self:
 		#partial switch opcode_variant {
@@ -83,7 +84,7 @@ maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.S
 		case .sub__l:
 			maybe_self = new__sub__r8(.l)
 		case .sub__val_at_hl:
-			maybe_self = new__sub__addr(.hl)
+			maybe_self = new__sub__addr(sMemoryAddress.new__hl())
 		case .sub__a:
 			maybe_self = new__sub__r8(.a)
 		case .sbc__b:
@@ -99,7 +100,7 @@ maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.S
 		case .sbc__l:
 			maybe_self = new__sbc__r8(.l)
 		case .sbc__val_at_hl:
-			maybe_self = new__sbc__addr(.hl)
+			maybe_self = new__sbc__addr(sMemoryAddress.new__hl())
 		case .sbc__a:
 			maybe_self = new__sbc__r8(.a)
 		case .and__b:
@@ -115,7 +116,7 @@ maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.S
 		case .and__l:
 			maybe_self = new__and__r8(.l)
 		case .and__val_at_hl:
-			maybe_self = new__and__addr(.hl)
+			maybe_self = new__and__addr(sMemoryAddress.new__hl())
 		case .and__a:
 			maybe_self = new__and__r8(.a)
 		case .xor__b:
@@ -131,7 +132,7 @@ maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.S
 		case .xor__l:
 			maybe_self = new__xor__r8(.l)
 		case .xor__val_at_hl:
-			maybe_self = new__xor__addr(.hl)
+			maybe_self = new__xor__addr(sMemoryAddress.new__hl())
 		case .xor__a:
 			maybe_self = new__xor__r8(.a)
 		case .or__b:
@@ -147,7 +148,7 @@ maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.S
 		case .or__l:
 			maybe_self = new__or__r8(.l)
 		case .or__val_at_hl:
-			maybe_self = new__or__addr(.hl)
+			maybe_self = new__or__addr(sMemoryAddress.new__hl())
 		case .or__a:
 			maybe_self = new__or__r8(.a)
 		case .cp__b:
@@ -163,7 +164,7 @@ maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.S
 		case .cp__l:
 			maybe_self = new__cp__r8(.l)
 		case .cp__val_at_hl:
-			maybe_self = new__cp__addr(.hl)
+			maybe_self = new__cp__addr(sMemoryAddress.new__hl())
 		case .cp__a:
 			maybe_self = new__cp__r8(.a)
 		case .ret__nz:
@@ -315,7 +316,7 @@ maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.S
 		case .rlc__l:
 			maybe_self = new__rlc__r8(.l)
 		case .rlc__val_at_hl:
-			maybe_self = new__rlc__addr(.hl)
+			maybe_self = new__rlc__addr(sMemoryAddress.new__hl())
 		case .rlc__a:
 			maybe_self = new__rlc__r8(.a)
 		case .rrc__b:
@@ -331,7 +332,7 @@ maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.S
 		case .rrc__l:
 			maybe_self = new__rrc__r8(.l)
 		case .rrc__val_at_hl:
-			maybe_self = new__rrc__addr(.hl)
+			maybe_self = new__rrc__addr(sMemoryAddress.new__hl())
 		case .rrc__a:
 			maybe_self = new__rrc__r8(.a)
 		case .rl__b:
@@ -347,7 +348,7 @@ maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.S
 		case .rl__l:
 			maybe_self = new__rl__r8(.l)
 		case .rl__val_at_hl:
-			maybe_self = new__rl__addr(.hl)
+			maybe_self = new__rl__addr(sMemoryAddress.new__hl())
 		case .rl__a:
 			maybe_self = new__rl__r8(.a)
 		case .rr__b:
@@ -363,7 +364,7 @@ maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.S
 		case .rr__l:
 			maybe_self = new__rr__r8(.l)
 		case .rr__val_at_hl:
-			maybe_self = new__rr__addr(.hl)
+			maybe_self = new__rr__addr(sMemoryAddress.new__hl())
 		case .rr__a:
 			maybe_self = new__rr__r8(.a)
 		case .sla__b:
@@ -379,7 +380,7 @@ maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.S
 		case .sla__l:
 			maybe_self = new__sla__r8(.l)
 		case .sla__val_at_hl:
-			maybe_self = new__sla__addr(.hl)
+			maybe_self = new__sla__addr(sMemoryAddress.new__hl())
 		case .sla__a:
 			maybe_self = new__sla__r8(.a)
 		case .sra__b:
@@ -395,7 +396,7 @@ maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.S
 		case .sra__l:
 			maybe_self = new__sra__r8(.l)
 		case .sra__val_at_hl:
-			maybe_self = new__sra__addr(.hl)
+			maybe_self = new__sra__addr(sMemoryAddress.new__hl())
 		case .sra__a:
 			maybe_self = new__sra__r8(.a)
 		case .swap__b:
@@ -411,7 +412,7 @@ maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.S
 		case .swap__l:
 			maybe_self = new__swap__r8(.l)
 		case .swap__val_at_hl:
-			maybe_self = new__swap__addr(.hl)
+			maybe_self = new__swap__addr(sMemoryAddress.new__hl())
 		case .swap__a:
 			maybe_self = new__swap__r8(.a)
 		case .srl__b:
@@ -427,7 +428,7 @@ maybe_from_opcode :: proc(opcode: uOpcode.Self, maybe_operand: Maybe(uOperand1.S
 		case .srl__l:
 			maybe_self = new__srl__r8(.l)
 		case .srl__val_at_hl:
-			maybe_self = new__srl__addr(.hl)
+			maybe_self = new__srl__addr(sMemoryAddress.new__hl())
 		case .srl__a:
 			maybe_self = new__srl__r8(.a)
 		}
